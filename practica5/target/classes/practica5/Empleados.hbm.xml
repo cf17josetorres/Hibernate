@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 11-dic-2020 1:00:32 by Hibernate Tools 5.2.11.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="empresa" dynamic-insert="false" dynamic-update="false" mutable="true" name="practica5.Empleados" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="empleados">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="practica5.Departamentos" embed-xml="true" fetch="select" insert="true" name="departamentos" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="cod_dept"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="nombre"/>
+        </property>
+        <property generated="never" lazy="false" name="apellidos" optimistic-lock="true" type="string" unique="false">
+            <column length="25" name="apellidos"/>
+        </property>
+        <property generated="never" lazy="false" name="salario" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="salario" precision="22" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
